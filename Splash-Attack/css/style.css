@@ -1,0 +1,146 @@
+/*
+font-family: 'Roboto Slab', serif;
+font-family: 'Karla', sans-serif;
+*/
+
+
+body
+{
+    background: url('../img/subtle_grunge.png') repeat;
+    font-family: 'Roboto Slab', serif;
+    font-size: 20px;
+    color: #999;
+}
+
+a {
+    color: #fd4e01;
+}
+
+a:hover, a:focus {
+    color: #872a01;
+}
+
+.tooltip {
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+height: 100%;
+min-width: 270px;
+/* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+min-height: 100%;
+height: auto !important;
+height: 100%;
+/* Negative indent footer by it's height */
+margin: 0 auto -104px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+height: 104px;
+text-align:center;
+}
+#footer {
+    background-color: #aaa;
+}
+
+.transparent
+{
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+
+/* Card styles */
+
+.card-set{
+    width: 100%;
+    margin: 0 auto;
+}
+.card {
+    width: 220px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 20px;
+}
+.card .asset {
+    width: 100%;
+    height: 200px;
+    background: #eee;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+.container {
+width: auto;
+max-width: 680px;
+}
+.container .credit {
+margin: 10px 0;
+}
+
+
+/** ICONS **/
+
+a.icon {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    padding: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+a.icon:hover {
+    background: #fd4e01;
+}
+.icon-pavitra-s-tandon-chat-for-lovers,.icon-cole-townsend-chat,.icon-juan-gomez-alzaga-bird,.icon-patrik-larsson-pokemon,.icon-pencil,.icon-plus,.icon-award-stroke {
+    background-image: url('../img/icon-sprites.png');
+    background-repeat: no-repeat;
+    width: 64px;
+    height: 64px;
+}
+.icon-pavitra-s-tandon-chat-for-lovers {
+    background-position: 0 0;
+}
+.icon-cole-townsend-chat {
+    background-position: -128px 0;
+}
+.icon-juan-gomez-alzaga-bird {
+    background-position: -256px 0;
+}
+.icon-patrik-larsson-pokemon {
+    background-position: -384px 0;
+}
+.icon-pencil {
+    background-position: -512px 0;
+}
+.icon-plus {
+    background-position: -640px 0;
+}
+.icon-award-stroke {
+    background-position: -768px 0;
+}

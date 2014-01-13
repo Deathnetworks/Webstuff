@@ -1,0 +1,28 @@
+.icon-pavitra-s-tandon-chat-for-lovers,.icon-cole-townsend-chat,.icon-juan-gomez-alzaga-bird,.icon-patrik-larsson-pokemon,.icon-pencil,.icon-plus,.icon-award-stroke {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	background-image: url(sprites.png);
+	background-repeat: no-repeat;
+}
+.icon-pavitra-s-tandon-chat-for-lovers {
+	background-position: 0 0;
+}
+.icon-cole-townsend-chat {
+	background-position: -128px 0;
+}
+.icon-juan-gomez-alzaga-bird {
+	background-position: -256px 0;
+}
+.icon-patrik-larsson-pokemon {
+	background-position: -384px 0;
+}
+.icon-pencil {
+	background-position: -512px 0;
+}
+.icon-plus {
+	background-position: -640px 0;
+}
+.icon-award-stroke {
+	background-position: -768px 0;
+}

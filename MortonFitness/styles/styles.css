@@ -1,0 +1,71 @@
+body {
+  background: url('../images/skewed_print.png') repeat;
+}
+
+/* main container styles */
+.container.main {
+  background: #fff;
+  padding: 0 2em;
+}
+
+.navbar-header span {
+  padding-right: 10px;
+}
+/* menu styles */
+.navbar-nav>li>a {
+  font-size: 1.2em;
+}
+
+a:hover {
+  color: #007196;
+}
+
+/* footer styles */
+
+footer.main {
+  margin-top: 4em;
+}
+
+/* about page */
+
+.about-list {
+  list-style-type: none;
+  margin: 2em 0;
+}
+.about-list span,
+.contact-list span {
+  padding-right: 10px;
+}
+
+.profile-img, .coaching-img, .contact-img  {
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  max-width: 430px;
+  padding: 15px;
+}
+
+.front-img {
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+  max-width: 430px;
+}
+/* contact page */
+
+.contact-list {
+  list-style-type: none;
+  padding-left:0;
+}
+
+/* front page */
+
+.flex-img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+#front-learn-more {
+  margin-bottom: 2em;
+}
