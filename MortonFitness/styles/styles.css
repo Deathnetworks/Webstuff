@@ -3,18 +3,22 @@ body {
   padding:0;
 }
 
-.page-header
-{
+.page-header {
+  margin: 0 0 10px;
+}
+
+.navbar {
   margin: 0 0 10px;
 }
 /* page header navbar */
 .page-header.main {
   border: none;
-  margin:0;
+  margin: 0;
   padding: 0;
+  height: 60px;
 }
 .navbar  h1 {
-  margin: 0;
+  margin:  10px 0 0;
   font-family: 'Changa One', arial;
 }
 
@@ -28,30 +32,47 @@ body {
 }
 
 .navbar h1 .bottom {
-  font-size: 0.52em;
+  font-size: 0.5em;
   display:block;
-  color: #eee;
+  color: #ccc;
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
   text-transform: uppercase;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
   font-weight: 600;
 }
 
 
 .navbar .motto {
   font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #eee;
+  color: #ccc;
   margin: 20px 10px 0 0 ;
+  line-height: 1em;
 }
 
 .name {
   float: right;
 }
 
+.nameicon {
+  float: left;
+  color: #fff;
+  font-size: 5em;
+  margin: 0 0 0 10px;
+}
+
+.copy {
+  float: left;
+}
 /* headers */
 
 h2, h4 {
   font-weight: 400;
+}
+
+.navbar>.container .navbar-brand:hover,
+.navbar-default .navbar-nav>li>a:hover {
+  color: #09c;
+
 }
 
 /* main container styles */
@@ -132,9 +153,19 @@ footer.main {
 }
 
 /* dynamic images sizing.  */
-@media(max-width:450px){
+/*@media(max-width:580px){
   .motto {
     display:none
+  }
+}
+*/
+@media(max-width:550px){
+  .motto,
+  .nameicon {
+    display:none
+  }
+  .navbar .name h1 {
+    margin: 0 0 0 150px;
   }
   
   .profile-img, .coaching-img, .contact-img {

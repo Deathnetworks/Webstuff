@@ -21,7 +21,17 @@
   <div class="navbar navbar-default">
     <div class="container">
       <div class="page-header main clearfix">
-        <div class="name"><h1><span class="top">Morton</span> <span class="bottom">Training Systems</span></h1></div>
+        <div class="name clearfix">
+
+          <div class="copy">
+            <h1><span class="top"> Morton</span> <span class="bottom">Training Systems</span></h1>
+          </div>
+
+                    <div class="nameicon">
+            <span class="flaticon-curldumbbell">
+          </div>
+          
+        </div>
         <div class="lead motto">Fitness and Nutrition without the Gimmicks</div>
       </div>
 
