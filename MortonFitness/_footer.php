@@ -3,6 +3,7 @@
         <div class="col-lg-12">
           <ul class="list-unstyled">
             <!-- <li class="pull-right"><a href="#top">Back to top</a></li> -->
+            <li><a href="contact.php">Contact</a></li>
             <li><a href="http://jmortontraining.wordpress.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
             <li><a href="https://www.facebook.com/jeff.morton.75436">Facebook</a></li>
           </ul>

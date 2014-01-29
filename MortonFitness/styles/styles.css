@@ -1,5 +1,57 @@
 body {
   background: url('../images/skewed_print.png') repeat;
+  padding:0;
+}
+
+.page-header
+{
+  margin: 0 0 10px;
+}
+/* page header navbar */
+.page-header.main {
+  border: none;
+  margin:0;
+  padding: 0;
+}
+.navbar  h1 {
+  margin: 0;
+  font-family: 'Changa One', arial;
+}
+
+.navbar h1 span {
+  line-height: 0.8em;
+}
+.navbar h1 .top {
+  font-size: 1.5em;
+  display: block;
+  color: #09c;
+}
+
+.navbar h1 .bottom {
+  font-size: 0.52em;
+  display:block;
+  color: #eee;
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 1);
+  font-weight: 600;
+}
+
+
+.navbar .motto {
+  font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #eee;
+  margin: 20px 10px 0 0 ;
+}
+
+.name {
+  float: right;
+}
+
+/* headers */
+
+h2, h4 {
+  font-weight: 400;
 }
 
 /* main container styles */
@@ -69,3 +121,24 @@ footer.main {
 #front-learn-more {
   margin-bottom: 2em;
 }
+
+/* branding */
+.branding {
+  height: 100px;
+  background: #eee;
+}
+.branding h1 {
+  margin:0;
+}
+
+/* dynamic images sizing.  */
+@media(max-width:450px){
+  .motto {
+    display:none
+  }
+  
+  .profile-img, .coaching-img, .contact-img {
+    width: 300px;
+  }
+}
+

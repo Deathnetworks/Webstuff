@@ -16,7 +16,7 @@
     <div class="col-lg-4">
       <h2>Coaching?</h2>
       <p>
-        For consultation, please take a look at the <a href="coaching.php">coaching page</a> for more information.</p>
+        For consultation, please take a look at the <a href="coaching.php">front page</a> for more information.</p>
         <p>Please fill out the <a href="https://docs.google.com/forms/d/1urzzCutYCekPsdKrUxzTtA9rhkOQQ3iMBliFljcnbLQ/viewform">consultation application</a> form if you are interested, and I will get back to you within 48 hours!
       </p>
     </div>
