@@ -1,0 +1,226 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+/* Begin theme */
+
+body {
+  background: url('../images/broken_noise.png') repeat;
+  font-size: 13px;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  color: #929292;
+  line-height: 16px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff3882;
+}
+.tree {
+  position: relative;
+  width: 650px;
+  margin: 30px auto;
+}
+
+.trunk-container {
+  position: absolute;
+}
+
+h2 em {
+  font-style: italic;
+  font-size: 12px;
+}
+
+.trunk {
+  position: relative;
+  left: 250px;
+  height: 650px;
+  width: 15px;
+  background: #363636;
+
+  -moz-border-radius-topleft: 70px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 50px;
+  -moz-border-radius-bottomleft: 0;
+
+  -webkit-border-top-left-radius: 70px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 50px;
+  -webkit-border-bottom-left-radius: 0;
+}
+
+.leaf-container {
+  /*position: absolute;*/
+  margin-top: 50px;
+}
+
+.leaf {
+  position: relative;
+  width: 200px;
+  background: #363636;
+  margin: 25px 0;
+
+}
+
+.leaf:hover {
+  background: #404040;
+}
+.right {
+  padding: 15px 0px 10px 35px;
+  left: 280px;
+  -moz-border-radius-topleft: 70px;
+  -moz-border-radius-topright: 0px;
+  -moz-border-radius-bottomright: 50px;
+  -moz-border-radius-bottomleft: 0;
+
+  -webkit-border-top-left-radius: 70px;
+  -webkit-border-top-right-radius: 0px;
+  -webkit-border-bottom-right-radius: 50px;
+  -webkit-border-bottom-left-radius: 0;
+
+}
+
+.left {
+  padding: 10px 10px 15px 25px;
+
+  -moz-border-radius-topleft: 0px;
+  -moz-border-radius-topright: 70px;
+  -moz-border-radius-bottomright: 0px;
+  -moz-border-radius-bottomleft: 50px;
+
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 70px;
+  -webkit-border-bottom-right-radius: 0px;
+  -webkit-border-bottom-left-radius: 50px;
+
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.roots {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.dead {
+  background: #111;
+}
+
+.blossom {
+  position: relative;
+  left: 210px;
+}
+
+.blossom img {
+  position: relative;
+  z-index: 20;
+}
+
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+img.grayscale:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+}
+
+.thatsme{
+  position: relative;
+}
+
+.blossom .thatsme p {
+  color: inherit;
+  position: absolute;
+  top:-60px;
+  background: transparent;
+  padding: 3px 10px 3px 25px;
+  z-index: 10;
+  left:10px;
+  width: 115px;
+  font-size: 1.0em;
+
+  -webkit-border-top-left-radius: 0px;
+  -webkit-border-top-right-radius: 70px;
+
+  -webkit-transform: translateX(0px);
+  -moz-transform: translateX(0px);
+  -o-transform: translateX(0px) ;
+  -ms-transform: translateX(0px) ;
+  transform: translateX(0px) ;
+  -webkit-transition-delay: 0.4s;
+  -moz-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  -ms-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+}
+
+
+.thatsme p span {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+
+.blossom:hover .thatsme p {
+  background: #431d45;
+  color: #fff;
+  -webkit-transform: translateX(90px);
+  -moz-transform: translateX(90px);
+  -o-transform: translateX(90px);
+  -ms-transform: translateX(90px);
+  transform: translateX(90px);
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+
+@media(max-width:400px){
+  .trunk {
+    display: none;
+  }
+  .right {
+    left: 0;
+  }
+  .blossom {
+    left: 80px;
+  }
+  .roots {
+    text-align: left;
+  }
+  .tree {
+    position: relative;
+    padding: 0 30px 0;
+  }
+}
+
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+/**
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+.cf {
+    *zoom: 1;
+}
