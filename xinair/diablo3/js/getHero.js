@@ -160,8 +160,9 @@ var d3client = (function()
     var totalIncomplete = totalQuestComplete = 0;
     // console.log('===Hero success: ', data);
 
+    var gender = data.gender === 0 ? ' male ' : ' female ';
     htmlHeader += '<h3 class="alert alert-info">Hero: ' +data.name
-      + ' (Level '+ data.level + ' ' +data.class+')</h3>';
+      + ' (Level '+ data.level + gender + data.class + ')</h3>';
 
     $.each(data.progress[_difficulty], function(key, val)
     {
