@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Diablo 3 Quest Aggregator</title>
+  <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="./js/d3api.js"></script>
+  <script src="./js/getHero.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">D3 Quest Aggregator</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav ">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Server <b class="caret"></b></a>
+            <ul id="selectServer" class="dropdown-menu">
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locale <b class="caret"></b></a>
+            <ul id="selectLocale" class="dropdown-menu">
+            </ul>
+          </li>
+        </ul>
+        <form id="searchHero" class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input id="battleTagName" type="text" class="form-control" placeholder="Battle Tag Name">
+            <input id="battleTagCode" type="text" class="form-control" placeholder="Battle Tag Code">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved Accounts <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a class="saved" href="#" data-battletagname="Mecha" data-battletagcode="1387" data-server="us" data-locale="en_us">Mecha</a></li>
+              <li><a class="saved" href="#" data-battletagname="Essay" data-battletagcode="1223" data-server="us" data-locale="en_us">Essay</a></li>
+              <li><a class="saved" href="#" data-battletagname="Pengie" data-battletagcode="1603" data-server="us" data-locale="en_us">Pengie</a></li>
+              <!-- <li class="divider"></li> -->
+            </ul>
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+
+  </nav>
+
+  <div id="heroContainer" class="jumbotron">
+    <div class="container">
+      <h1><span class="battleTagName">Hello</span><a href="#" id="refresh" class="hide">(refresh)</a></h1>
+      <ul class="data">
+        <p>To search for which quests you still have to do, provide input for your BattleNET account above. For an example, use a preset in the top right menu.</p>
+      </ul>
+    </div>
+  </div>
+
+  <footer class="container">
+      <p class="alert alert-danger">Note: red background means the quest is <strong>INCOMPLETE</strong>!</p>
+      <p class="alert alert-succes">Note: green background means you can <strong>RESET</strong> the hero's quest progress!</p>
+
+      <p>&copy; Xinair 2014. This is a quest aggregator using the <a href="https://github.com/evyatron/d3-js-client">D3 js API</a>. It's purpose is to help me and a group of friends find out which quests we still need to complete as a requirement to reset our game. Why? For moar loots! Learn more about the api at the <a href="http://blizzard.github.io/d3-api-docs/">Blizzard API docs</a>.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
