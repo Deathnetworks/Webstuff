@@ -37,12 +37,18 @@ var d3client = (function()
     $('#searchHero').submit( function(e) {
       e.preventDefault();
 
+      var battleTagSplit = $('#battleTag').val().split('#');
+      if(battleTagSplit.length !== 2) {
+        console.error('Bad player tag provided');
+        return;
+      }
+
       // Save the server data.
       var heroData = {
         server: _selectServer,
         locale: _selectLocale,
-        battleTagName: $('#battleTagName').val(),
-        battleTagCode: $('#battleTagCode').val()
+        battleTagName: battleTagSplit[0],
+        battleTagCode: battleTagSplit[1]
       };
 
       _queryUser(heroData);
@@ -53,12 +59,14 @@ var d3client = (function()
     {
       e.preventDefault();
       
-      $("#battleTagName").val( $(this).data('battletagname'));
-      $("#battleTagCode").val( $(this).data('battletagcode'));
+      $("#battleTag").val( $(this).data('battletag'));
 
       // All the presets
       _selectServer = $(this).data('server');
       _selectLocale = $(this).data('locale');
+
+      D3API.setServer(_selectServer);
+      D3API.setLocale(_selectLocale);
 
       // Simulate a form submit
       $('#searchHero').submit();
@@ -78,14 +86,20 @@ var d3client = (function()
       D3API.setLocale(_selectLocale);
     });
 
+    // For when a user clicks the refresh link
     $('#refresh').click(function(e){
       e.preventDefault();
       if(_lastConfig)
       {
         _queryUser(_lastConfig);
-
       }
-    })
+    });
+
+    // For when a user toggles an act's quest list.
+    $(".actToggler").on('click', function(e){
+      e.preventDefault();
+      $(this).toggleClass('active, inactive');
+    });
   };
 
   // Grab our hero data via the D3 api.
@@ -157,7 +171,7 @@ var d3client = (function()
     var $newHeroBucket = $('<div class="hero"></div>');
 
     var totalIncomplete = totalQuestComplete = 0;
-    // console.log('===Hero success: ', data);
+    console.log('==============Hero success: ', data);
 
     var gender = data.gender === 0 ? ' male ' : ' female ';
     htmlHeader += '<h3 class="alert alert-info">Hero: ' +data.name
@@ -168,10 +182,10 @@ var d3client = (function()
       // Note: the top level "completed" property per act is a LIE. 
       // We will look at each quest manually...
 
-      htmlBody += '<h4>' + key + '</h4><ol>';
 
       // build our list of quests completed.
-      var totalCompleted = val.completedQuests.length;
+      var totalCompleted = val.completedQuests.length,
+        isEntireActComplete = false;
       totalQuestComplete += totalCompleted;
       var arrayQuestCompleted = [];
       for (var i = 0; i < totalCompleted; i++)
@@ -202,17 +216,44 @@ var d3client = (function()
 
       // console.log('Completed: ', arrayQuestCompleted);
       // console.log('Differenc: ', boolQuestList);
+      isEntireActComplete = arrayQuestCompleted.length === _questList[key].length;
+      console.log('Complettion/Difference: ', arrayQuestCompleted.length, _questList[key].length);
 
-
-      // Go through the D3 quest list
-      for(var i = 0; i < _questList[key].length; i++)
+      // If the hero has not completed all the quests in the current act.
+      if(!isEntireActComplete)
       {
-        // Compare the names.
-        var statusClass = boolQuestList[i] && boolQuestList[i].completed ? '' : 'bg-danger';
-        htmlBody += '<li class="' + statusClass + '">' + _questList[key][i] + ' </li>';
+        htmlBody += '<h4>' + key + '</h4>';
+
+        htmlBody += '<ol>';
+        // Go through the D3 quest list
+        for(var i = 0; i < _questList[key].length; i++)
+        {
+          // Compare the names.
+          var statusClass = boolQuestList[i] && boolQuestList[i].completed ? '' : 'bg-danger';
+          htmlBody += '<li class="' + statusClass + '">' + _questList[key][i] + ' </li>';
+        }
+        htmlBody += '</ol>';
+      }
+      // Hero completed all the act's quests.
+      else
+      {
+        var actListId = 'hero_' + data.id + '_' + key;
+        htmlBody += '<h4>' + key + ' (complete)'
+            + '<button type="button" class="btn btn-link actToggler" href="#" data-toggle="collapse" class="active" data-target="#'+actListId+'">'
+            + 'Toggle Quests'
+            + '</button></h4>'
+
+        var expandable = '<div id="'+actListId+'" class="collapse">'
+            + '<ol>';
+
+          for(var i = 0; i < _questList[key].length; i++){
+            expandable += '<li>'+_questList[key][i]+'</li>';
+
+          }
+          expandable += '</ol></div>';
+        htmlBody += expandable;
       }
 
-      htmlBody += '</ol>';
 
     });
 

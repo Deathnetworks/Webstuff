@@ -16,3 +16,7 @@ ul {
 ol li {
   padding: 2px 5px;
 }
+
+.actToggler {
+  display: inline;
+}

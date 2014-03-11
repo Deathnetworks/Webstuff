@@ -46,8 +46,7 @@
         </ul>
         <form id="searchHero" class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input id="battleTagName" type="text" class="form-control" placeholder="Battle Tag Name">
-            <input id="battleTagCode" type="text" class="form-control" placeholder="Battle Tag Code">
+            <input id="battleTag" type="text" class="form-control" placeholder="Battle#Tag">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
@@ -55,9 +54,9 @@
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved Accounts <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a class="saved" href="#" data-battletagname="Mecha" data-battletagcode="1387" data-server="us" data-locale="en_us">Mecha</a></li>
-              <li><a class="saved" href="#" data-battletagname="Essay" data-battletagcode="1223" data-server="us" data-locale="en_us">Essay</a></li>
-              <li><a class="saved" href="#" data-battletagname="Pengie" data-battletagcode="1603" data-server="us" data-locale="en_us">Pengie</a></li>
+              <li><a class="saved" href="#" data-battletag="Mecha#1387" data-server="us" data-locale="en_us">Mecha</a></li>
+              <li><a class="saved" href="#" data-battletag="Essay#1223" data-server="us" data-locale="en_us">Essay</a></li>
+              <li><a class="saved" href="#" data-battletag="Pengie#1603" data-server="us" data-locale="en_us">Pengie</a></li>
               <!-- <li class="divider"></li> -->
             </ul>
           </li>
@@ -71,7 +70,8 @@
     <div class="container">
       <h1><span class="battleTagName">Hello</span><a href="#" id="refresh" class="hide">(refresh)</a></h1>
       <ul class="data">
-        <p>To search for which quests you still have to do, provide input for your BattleNET account above. For an example, use a preset in the top right menu.</p>
+        <p>To search for which Diablo 3 quests you still have to do, provide input for your BattleNET account above. An example is <strong>Mecha#1387</strong>, which is a <em>battle tag name</em> appended with a hash and <em>battle tag code</em>.</p>
+        <p>Use a preset in the saved accounts menu if you want a rendered example.</p>
       </ul>
     </div>
   </div>
