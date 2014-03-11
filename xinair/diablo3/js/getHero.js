@@ -51,32 +51,31 @@ var d3client = (function()
     // If any of our preset profiles are clicked, do an auto lookup.
     $('a.saved').click( function(e)
     {
-      // var battleVals = $(this).attr('id').split('_');
       e.preventDefault();
       
       $("#battleTagName").val( $(this).data('battletagname'));
       $("#battleTagCode").val( $(this).data('battletagcode'));
 
-      // all the presets
+      // All the presets
       _selectServer = $(this).data('server');
       _selectLocale = $(this).data('locale');
 
-      // simulate a form submit
+      // Simulate a form submit
       $('#searchHero').submit();
-
-
     });
 
     // save user server when selected
     $('#selectServer li a').click(function() {
       var val = $(this).text();
       _selectServer = val;
+      D3API.setServer(_selectServer);
     });
 
     // save user locale when selected
     $('#selectLocale li a').click(function() {
       var val = $(this).text();
       _selectLocale = val;
+      D3API.setLocale(_selectLocale);
     });
 
     $('#refresh').click(function(e){
@@ -166,7 +165,8 @@ var d3client = (function()
 
     $.each(data.progress[_difficulty], function(key, val)
     {
-      // top level "completed" property per act is a lIE. Look at each quest manually.
+      // Note: the top level "completed" property per act is a LIE. 
+      // We will look at each quest manually...
 
       htmlBody += '<h4>' + key + '</h4><ol>';
 
@@ -216,11 +216,15 @@ var d3client = (function()
 
     });
 
-    var completeClass =  totalQuestComplete === _totalQuestCount
-      ? ' class="alert alert-success"' : '';
+    var completed = totalQuestComplete === _totalQuestCount;
+    var completeClass =  completed ? ' class="alert alert-success"' : '';
 
     htmlMeta += '<p'+completeClass+'>Quest Completion: ' + totalQuestComplete + '/' + _totalQuestCount + '</p>';
+    if(completed)
+      htmlBody = '<p>You should go reset your quest progress for this hero! :)</p>';
+
     htmlData = htmlHeader + htmlMeta + htmlBody;
+
     // $('#heroContainer .data').append(htmlHeader);
     // $('#heroContainer .data').append(htmlData);
 
