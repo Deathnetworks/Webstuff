@@ -294,7 +294,7 @@ var d3client = (function()
     $('#heroContainer .battleTagName').text('Error');
     $('#heroContainer .data').html('<li>'+data.reason+' (Error code: '+data.code+')</li>');
 
-    if(_lastConfig.length)
+    if(data.code !== 'SADFACE')
       $('#heroContainer .data').append('<li>Config: '+JSON.stringify(_lastConfig)+'</li>');
 
     $('#heroContainer').css({display: 'block'});
