@@ -39,7 +39,7 @@ var d3client = (function()
 
       var battleTagSplit = $('#battleTag').val().split('#');
       if(battleTagSplit.length !== 2) {
-        console.error('Bad player tag provided');
+        _onErrorCallback({reason: 'Please provide a valid battletag name#code', code:'SADFACE'});
         return;
       }
 
@@ -289,11 +289,14 @@ var d3client = (function()
   };
 
 
-  var _onErrorCallback = function(data, url, options)
+  var _onErrorCallback = function(data)
   {
     $('#heroContainer .battleTagName').text('Error');
     $('#heroContainer .data').html('<li>'+data.reason+' (Error code: '+data.code+')</li>');
-    $('#heroContainer .data').append('<li>Config: '+JSON.stringify(_lastConfig)+'</li>');
+
+    if(_lastConfig.length)
+      $('#heroContainer .data').append('<li>Config: '+JSON.stringify(_lastConfig)+'</li>');
+
     $('#heroContainer').css({display: 'block'});
     $('#refresh').css({display: 'none'});
 
