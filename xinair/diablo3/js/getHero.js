@@ -134,7 +134,7 @@ var d3client = (function()
   {
     // console.log('===Career success: ', data);
     $('#heroContainer .battleTagName').text(data.battleTag);
-    $('#heroContainer .data').append('<p>Quest Difficulty: ' +_difficulty+'</p>');
+    // $('#heroContainer .data').append('<p>Quest Difficulty: ' +_difficulty+'</p>');
 
     $.each(data.heroes, function(key, val) {
       D3API.getHero({
