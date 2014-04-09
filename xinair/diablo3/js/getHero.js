@@ -28,7 +28,6 @@ var d3client = (function()
 
     $("#selectServer").append(htmlServers);
     $("#selectLocale").append(htmlLocales);
-
   };
 
   var _setupListeners = function()
@@ -105,7 +104,6 @@ var d3client = (function()
   // Grab our hero data via the D3 api.
   var _queryUser = function(config)
   {
-    // console.log('===grab hero dataa: ', config);
     if(!config.battleTagName || !config.battleTagCode) {
       console.error && console.error('Invalid query');
     }
@@ -132,7 +130,6 @@ var d3client = (function()
   // After we first grab the user data.
   var _onSuccessCareerCallback = function(data, url, options)
   {
-    // console.log('===Career success: ', data);
     $('#heroContainer .battleTagName').text(data.battleTag);
     // $('#heroContainer .data').append('<p>Quest Difficulty: ' +_difficulty+'</p>');
 
@@ -168,10 +165,9 @@ var d3client = (function()
     var heroData = null,
       htmlData = htmlHeader = htmlBody = htmlMeta = '';
 
-    var $newHeroBucket = $('<div class="hero"></div>');
+    var $newHeroBucket = $('<div class="hero-' + data.id + '"></div>');
 
     var totalIncomplete = totalQuestComplete = 0;
-    console.log('==============Hero success: ', data);
 
     var gender = data.gender === 0 ? ' male ' : ' female ';
     htmlHeader += '<h3 class="alert alert-info">Hero: ' +data.name
@@ -214,10 +210,7 @@ var d3client = (function()
         boolQuestList.push({name: el, completed: isCompleted});
       });
 
-      // console.log('Completed: ', arrayQuestCompleted);
-      // console.log('Differenc: ', boolQuestList);
       isEntireActComplete = arrayQuestCompleted.length === _questList[key].length;
-      console.log('Complettion/Difference: ', arrayQuestCompleted.length, _questList[key].length);
 
       // If the hero has not completed all the quests in the current act.
       if(!isEntireActComplete)
@@ -264,7 +257,7 @@ var d3client = (function()
     if(completed)
       htmlBody = '<p>You should go reset your quest progress for this hero! :)</p>';
 
-    htmlData = htmlHeader + htmlMeta + htmlBody;
+    htmlData = htmlHeader + htmlMeta + '<div class="QuestContainer" style="display:none;">' + htmlBody + '</div>';
 
     // $('#heroContainer .data').append(htmlHeader);
     // $('#heroContainer .data').append(htmlData);
@@ -272,6 +265,10 @@ var d3client = (function()
     $newHeroBucket.append(htmlData);
     $('#heroContainer .data').append($newHeroBucket);
     $('#refresh').removeClass('hide').show();
+    
+    $('.hero-' + data.id + ' h3').click(function() {
+		  $(this).parent().find('.QuestContainer').slideToggle('slow');
+    });
   };
 
   var _setupTotalQuestCount = function()
