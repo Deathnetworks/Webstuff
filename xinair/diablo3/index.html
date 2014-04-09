@@ -30,14 +30,33 @@
 
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <form id="searchHero" class="navbar-form navbar-left" role="search" style="display:none">
+        <ul class="nav navbar-nav ">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Server <b class="caret"></b></a>
+            <ul id="selectServer" class="dropdown-menu">
+            </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav ">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Locale <b class="caret"></b></a>
+            <ul id="selectLocale" class="dropdown-menu">
+            </ul>
+          </li>
+        </ul>
+        <form id="searchHero" class="navbar-form navbar-left" role="search">
           <div class="form-group">
             <input id="battleTag" type="text" class="form-control" placeholder="Battle#Tag">
           </div>
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-              <li><a class="saved" href="#" data-battletag="Majew#1719" data-server="eu" data-locale="en_us">Majew</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Saved Accounts <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a class="saved" href="#" data-battletag="Mecha#1387" data-server="us" data-locale="en_us">Mecha</a></li>
+              <li><a class="saved" href="#" data-battletag="Essay#1223" data-server="us" data-locale="en_us">Essay</a></li>
+              <li><a class="saved" href="#" data-battletag="Pengie#1603" data-server="us" data-locale="en_us">Pengie</a></li>
               <li><a class="saved" href="#" data-battletag="DeathNet#1598" data-server="eu" data-locale="en_us">Deathnetworks</a></li>
               <!-- <li class="divider"></li> -->
             </ul>
@@ -52,8 +71,8 @@
     <div class="container">
       <h1><span class="battleTagName">Hello</span><a href="#" id="refresh" class="hide">(refresh)</a></h1>
       <ul class="data">
-        <p>Select your account from above to view the quest progress on each character.</p>
-        <p>Click on the hero name to expand into further detail.</p>
+        <p>To search for which Diablo 3 quests you still have to do, provide input for your BattleNET account above. An example is <strong>Mecha#1387</strong>, which is a <em>battle tag name</em> appended with a hash and <em>battle tag code</em>.</p>
+        <p>Use a preset in the saved accounts menu if you want a rendered example.</p>
       </ul>
     </div>
   </div>
@@ -61,13 +80,10 @@
   <footer class="container">
       <p class="alert alert-danger">Note: red background means the current quest is <strong>INCOMPLETE</strong>!</p>
       <p class="alert alert-success">Note: green background means you can <strong>RESET</strong> the current hero's quest progress!</p>
-      
+
       <p>&copy; Xinair 2014. For any questions or bugs, please <a href="https://docs.google.com/forms/d/1g4wCTdgvsowCmbVteRxVDrxcshCzUTRMNsOsXaPVG3s/viewform">contact Mee</a>.</p>
         <p><strong>What is this tool?</strong> This is a quest aggregator using the <a href="https://github.com/evyatron/d3-js-client" target="_blank">D3 js API</a>. Learn more about the api at the <a href="http://blizzard.github.io/d3-api-docs/" target="_blank">Blizzard API docs</a></p>
       <p><strong>What is this tool for?</strong> It's purpose was to help me and a group of friends find out which quests we still need to complete as a requirement to reset our game. Why? For moar loots, specifically the guaranteed legendary after killing Diablo on freshly reset game! You can read into more detail about the <a href="http://diablo.incgamers.com/blog/comments/reset-quests-and-guaranteed-legendary-drops-in-diablo-3-v2" target="_blank">guaranteed legendary drops</a> at incgamer.</p>
-      
-      <p><strong>&copy;Deathnetworks 2014 - ROS updates and personalisation for private usage</strong></p>
-      
     </div>
   </footer>
 
