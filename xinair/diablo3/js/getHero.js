@@ -1,8 +1,7 @@
 var d3client = (function() 
 {
   // settings
-  var _difficulty = 'normal',
-    _lastConfig = {},
+  var _lastConfig = {},
     _totalQuestCount = 0, //meh, this number shouldn't ever change... but o well.
     _selectServer = 'en',
     _selectLocale = 'en_us',
@@ -10,7 +9,8 @@ var d3client = (function()
       act1: ['The Fallen Star', 'The Legacy of Cain', 'A Shattered Crown', 'Reign of the Black King', 'Sword of the Stranger', 'The Broken Blade', 'The Doom in Wortham', 'Trailing the Coven', 'The Imprisoned Angel', 'Return to New Tristram'],
       act2: ['Shadows in the Desert', 'The Road to Alcarnus', 'City of Blood', 'A Royal Audience', 'Unexpected Allies', 'Betrayer of the Horadrim', 'Blood and Sand', 'The Black Soulstone', 'The Scouring of Caldeum', 'Lord of Lies'],
       act3: ['The Siege of Bastion\'s Keep', 'Turning the Tide', 'The Breached Keep', 'Tremors in the Stone', 'Machines of War', 'Siegebreaker', 'Heart of Sin'],
-      act4: ['Fall of the High Heavens', 'The Light of Hope', 'Beneath the Spire', 'Prime Evil']
+      act4: ['Fall of the High Heavens', 'The Light of Hope', 'Beneath the Spire', 'Prime Evil'],
+      act5: ["The Fall of Westmarch", "Souls of the Dead", "The Harbinger", "The Witch", "The Pandemonium Gate", "The Battlefields of Eternity", "Breaching the Fortress", "Angel of Death"]
     };
 
 
@@ -177,7 +177,7 @@ var d3client = (function()
     htmlHeader += '<h3 class="alert alert-info">Hero: ' +data.name
       + ' (Level '+ data.level + gender + data.class + ')</h3>';
 
-    $.each(data.progress[_difficulty], function(key, val)
+    $.each(data.progression, function(key, val)
     {
       // Note: the top level "completed" property per act is a LIE. 
       // We will look at each quest manually...
